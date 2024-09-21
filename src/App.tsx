@@ -1,34 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { useAppDispatch } from './app/hooks'
+import { addWorkoutDayStore } from './services/workoutDay';
+import { addWorkoutExerciseStore } from './services/workoutExercise';
+import { setWorkoutSplitsStore } from './services/workoutSplit';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const dispatch = useAppDispatch();
+  const WorkoutDay = {
+    Id: 1,
+    Name: "Test",
+    Note: "Test",
+    Date: "2021-01-01",
+    WorkoutSplitId: 1,
+    workoutExercises: []
+  }
+  const WorkoutExercise = {
+    Id: 1,
+    Name: "TestExercise",
+    WorkoutDayId: 1,
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className="App">
+      <header className="App-header">
+        <button onClick={() => setWorkoutSplitsStore(dispatch)}>
+          Test
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+        <button onClick={() => addWorkoutDayStore(dispatch, WorkoutDay)}>
+          Test2
+        </button>
+        <button onClick={() => addWorkoutExerciseStore(dispatch, WorkoutExercise)}>
+          Test2
+        </button>
+      </header>
+    </div>
   )
 }
 
