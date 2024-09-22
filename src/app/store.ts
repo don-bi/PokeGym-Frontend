@@ -1,12 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import workoutSplitReducer from "./workoutSplitSlice";
-import workoutDayReducer from "./workoutDaySlice";
-import workoutExerciseReducer from "./workoutExerciseSlice";
+import workoutReducer from "./workoutSlice";
 
 const rootReducer = {
-    workoutSplitReducer: workoutSplitReducer,
-    workoutDayReducer: workoutDayReducer,
-    workoutExerciseReducer: workoutExerciseReducer,
+    workoutReducer: workoutReducer,
 }
 
 export const store = configureStore({
