@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { WorkoutDay, WorkoutSplit } from "../app/workoutTypes"
-import { RootState } from "../app/store";
+import { WorkoutDay, WorkoutSplit } from "../../app/workoutTypes"
+import { RootState } from "../../app/store";
 import WorkoutDayContainer from "./WorkoutDayContainer";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { addWorkoutDayStore } from "../services/workouts";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { addWorkoutDayStore } from "../../services/workouts";
 
 export default function WorkoutSplitContainer({split}: {split: WorkoutSplit}) {
     const [open, setOpen] = useState(false);

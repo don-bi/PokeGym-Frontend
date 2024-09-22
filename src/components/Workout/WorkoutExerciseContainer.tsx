@@ -1,6 +1,6 @@
-import { WorkoutExercise } from "../app/workoutTypes"
-import { useAppSelector } from "../app/hooks";
-import { RootState } from "../app/store";
+import { WorkoutExercise } from "../../app/workoutTypes"
+import { useAppSelector } from "../../app/hooks";
+import { RootState } from "../../app/store";
 
 export default function WorkoutExerciseContainer({exercise}: {exercise: WorkoutExercise}) {
     const workoutSets = useAppSelector((state: RootState) => state.workoutReducer.workoutSet);

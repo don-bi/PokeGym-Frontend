@@ -1,9 +1,9 @@
 import { useState, useTransition } from "react";
-import { WorkoutDay, WorkoutExercise } from "../app/workoutTypes"
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { RootState } from "../app/store";
+import { WorkoutDay, WorkoutExercise } from "../../app/workoutTypes"
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { RootState } from "../../app/store";
 import WorkoutExerciseContainer from "./WorkoutExerciseContainer";
-import { addWorkoutExerciseStore } from "../services/workouts";
+import { addWorkoutExerciseStore } from "../../services/workouts";
 
 export default function WorkoutDayContainer({day}: {day: WorkoutDay}) {
     const [open, setOpen] = useState(false);

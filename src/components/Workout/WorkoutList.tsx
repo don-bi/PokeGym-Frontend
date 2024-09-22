@@ -1,7 +1,7 @@
-import { WorkoutSplit } from "../app/workoutTypes";
-import { RootState } from "../app/store";
+import { WorkoutSplit } from "../../app/workoutTypes";
+import { RootState } from "../../app/store";
 import WorkoutSplitContainer from "./WorkoutSplitContainer";
-import { useAppSelector } from "../app/hooks";
+import { useAppSelector } from "../../app/hooks";
 import WorkoutSplitForm from "./WorkoutSplitForm";
 
 export default function WorkoutList() {

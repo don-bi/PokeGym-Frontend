@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { WorkoutSplit } from "../app/workoutTypes";
-import { useAppDispatch } from "../app/hooks";
-import { addWorkoutSplitStore } from "../services/workouts";
+import { WorkoutSplit } from "../../app/workoutTypes";
+import { useAppDispatch } from "../../app/hooks";
+import { addWorkoutSplitStore } from "../../services/workouts";
 
 export default function WorkoutSplitForm() {
     const [splitName, setSplitName] = useState("");
