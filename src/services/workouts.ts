@@ -1,4 +1,4 @@
-import { setWorkoutDays, setWorkoutSplits } from '../app/workoutSlice';
+import { setWorkoutDays, setWorkoutExercises, setWorkoutSets, setWorkoutSplits } from '../app/workoutSlice';
 import { Dispatch } from "redux"
 import axios from 'axios';
 
@@ -19,6 +19,24 @@ export const setWorkoutDaysStore = async (dispatch: Dispatch) => {
     try {
         const { data } = await axiosInstance.get("/WorkoutDay");
         dispatch(setWorkoutDays(data));
+    } catch {
+        console.log("Somethingw wrong")
+    }
+}
+
+export const setWorkoutExercisesStore = async (dispatch: Dispatch) => {
+    try {
+        const { data } = await axiosInstance.get("/WorkoutExercise");
+        dispatch(setWorkoutExercises(data));
+    } catch {
+        console.log("Somethingw wrong")
+    }
+}
+
+export const setWorkoutSetsStore = async (dispatch: Dispatch) => {
+    try {
+        const { data } = await axiosInstance.get("/WorkoutSet");
+        dispatch(setWorkoutSets(data));
     } catch {
         console.log("Somethingw wrong")
     }

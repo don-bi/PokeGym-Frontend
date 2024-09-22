@@ -1,21 +1,18 @@
-import { WorkoutDay, WorkoutSplit } from "../app/workoutTypes";
-import { useSelector } from "react-redux";
+import { WorkoutSplit } from "../app/workoutTypes";
 import { RootState } from "../app/store";
-import WokroutSplitContainer from "./WorkoutSplitContainer";
+import WorkoutSplitContainer from "./WorkoutSplitContainer";
+import { useAppSelector } from "../app/hooks";
 
 export default function WorkoutList() {
-    const workoutSplits = useSelector((state: RootState) => state.workoutReducer.workoutSplits);
+    const workoutSplits = useAppSelector((state: RootState) => state.workoutReducer.workoutSplits);
 
     return (
-        <div>
+        <div className="flex flex-col items-center gap-4">
             {workoutSplits.slice(0).reverse().map((ws: WorkoutSplit) => {
                 return (
-                    <WokroutSplitContainer split={ws}/>
+                    <WorkoutSplitContainer split={ws}/>
                 )
             })}
-            <button onClick={() => {
-                console.log(workoutSplits)
-            }}>Click</button>
         </div>
     )
 }
