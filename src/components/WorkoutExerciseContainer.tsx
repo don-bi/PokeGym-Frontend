@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { WorkoutExercise } from "../app/workoutTypes"
 import { useAppSelector } from "../app/hooks";
 import { RootState } from "../app/store";
 
 export default function WorkoutExerciseContainer({exercise}: {exercise: WorkoutExercise}) {
-    const [open, setOpen] = useState(false);
     const workoutSets = useAppSelector((state: RootState) => state.workoutReducer.workoutSet);
 
     return (

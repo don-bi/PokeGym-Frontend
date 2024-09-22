@@ -16,7 +16,9 @@ function App() {
   }, [])
 
   return (
-    <WorkoutList />
+    <>
+      <WorkoutList />
+    </>
   )
 }
 
