@@ -1,6 +1,5 @@
 import { setWorkoutDays, setWorkoutSplits } from '../app/workoutSlice';
 import { Dispatch } from "redux"
-import { WorkoutDay, WorkoutSplit } from "../app/workoutTypes";
 import axios from 'axios';
 
 const axiosInstance = axios.create({
@@ -18,14 +17,8 @@ export const setWorkoutSplitsStore = async (dispatch: Dispatch) => {
 
 export const setWorkoutDaysStore = async (dispatch: Dispatch) => {
     try {
-        const test:WorkoutDay[] = [{
-            Id: 1,
-            Name: "Test",
-            Note: "Test",
-            Date: "2021-01-01",
-            WorkoutSplitId: 1,
-        }]
-        dispatch(setWorkoutDays(test));
+        const { data } = await axiosInstance.get("/WorkoutDay");
+        dispatch(setWorkoutDays(data));
     } catch {
         console.log("Somethingw wrong")
     }

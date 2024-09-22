@@ -1,28 +1,28 @@
 export type WorkoutSplit = {
-    Id: number,
-    Name: string,
-    Note: string,
-    DateStart: string,
+    id: number,
+    name: string,
+    note: string,
+    dateStart: string,
 }
 
 export type WorkoutDay = {
-    Id: number,
-    Name: string,
-    Note: string,
-    Date: string,
-    WorkoutSplitId: number,
+    id: number,
+    name: string,
+    note: string,
+    date: string,
+    workoutSplitId: number,
 }
 
 export type WorkoutExercise = {
-    Id: number,
-    Name: string,
-    WorkoutDayId: number,
+    id: number,
+    name: string,
+    workoutDayId: number,
 }
 
 export type WorkoutSet = {
-    Id: number,
-    Order: number,
-    Reps: number,
-    Weight: number,
-    WorkoutExerciseId: number,
+    id: number,
+    order: number,
+    reps: number,
+    weight: number,
+    workoutExerciseId: number,
 }

@@ -1,21 +1,20 @@
+import { useEffect } from 'react'
 import './App.css'
+import WorkoutList from './components/WorkoutList'
+import { setWorkoutDaysStore, setWorkoutSplitsStore } from './services/workouts'
 import { useAppDispatch } from './app/hooks'
-import { setWorkoutDaysStore, setWorkoutSplitsStore } from './services/workouts';
+
 
 function App() {
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+      setWorkoutSplitsStore(dispatch)
+      setWorkoutDaysStore(dispatch)
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <button onClick={() => setWorkoutSplitsStore(dispatch)}>
-          Test
-        </button>
-        <button onClick={() => setWorkoutDaysStore(dispatch)}>
-          Test
-        </button>
-      </header>
-    </div>
+    <WorkoutList />
   )
 }
 
