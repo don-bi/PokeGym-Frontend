@@ -1,4 +1,3 @@
-import { CredentialResponse } from "@react-oauth/google";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -6,7 +5,7 @@ const initialState = {
     isLoggedIn: false,
 }
 
-type authenticatedUser = {
+type AuthenticatedUser = {
     username: string,
     email: string,
     token: string,
@@ -16,7 +15,7 @@ export const authenticationSlice = createSlice({
     name: "authentication",
     initialState: initialState,
     reducers: {
-        setIsAuthenticated: (state, action: PayloadAction<authenticatedUser>) => {
+        setIsAuthenticated: (state, action: PayloadAction<AuthenticatedUser>) => {
             state.token = action.payload.token;
             state.isLoggedIn = true;
             sessionStorage.setItem('token', action.payload.token);

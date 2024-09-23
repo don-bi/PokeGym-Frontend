@@ -1,17 +1,30 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
-import { Provider } from 'react-redux'
-import { store } from './app/store.ts'
-import { GoogleOAuthProvider } from '@react-oauth/google'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Layout from './components/Layout.tsx'
+import SignInPage from './components/Pages/SignInPage.tsx'
+import Dashboard from './components/Pages/Dashboard.tsx'
+
+const router = createBrowserRouter([
+  {
+    path: "",
+    element: <Layout/>,
+    children: [
+      {
+        path: "/",
+        element: <SignInPage />
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />
+      }
+    ]
+  }
+])
 
 createRoot(document.getElementById('root')!).render(
-  <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
-    <Provider store={store}>
-      <StrictMode>
-        <App />
-      </StrictMode>
-    </Provider>
-  </GoogleOAuthProvider>
+      
+        <RouterProvider router={router}/>
+
 )
