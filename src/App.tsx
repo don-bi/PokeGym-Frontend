@@ -9,12 +9,12 @@ import SignInForm from './components/Auth/SigninForm'
 function App() {
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-      setWorkoutSplitsStore(dispatch)
-      setWorkoutDaysStore(dispatch)
-      setWorkoutExercisesStore(dispatch)
-      setWorkoutSetsStore(dispatch)
-  }, [])
+  // useEffect(() => {
+  //     setWorkoutSplitsStore(dispatch)
+  //     setWorkoutDaysStore(dispatch)
+  //     setWorkoutExercisesStore(dispatch)
+  //     setWorkoutSetsStore(dispatch)
+  // }, [])
 
   return (
     <>

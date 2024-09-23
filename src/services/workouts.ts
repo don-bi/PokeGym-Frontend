@@ -4,7 +4,7 @@ import axios from 'axios';
 import { WorkoutDay, WorkoutExercise, WorkoutSplit } from '../app/workoutTypes';
 
 const axiosInstance = axios.create({
-    baseURL: "https://localhost:7250",
+    baseURL: import.meta.env.VITE_BASE_URL,
 })
 
 export const setWorkoutSplitsStore = async (dispatch: Dispatch) => {
