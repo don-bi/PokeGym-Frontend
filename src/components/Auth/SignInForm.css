@@ -1,0 +1,14 @@
+.eevee {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/background-pika.jpg");
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+}
+
+.middle-container {
+    box-shadow: 1px 1px 10px 0 rgba(255, 254, 254, 0.368);
+}
+
+.logo-text {
+    text-shadow: rgb(216, 216, 216) 1px 1px 1px;
+}
