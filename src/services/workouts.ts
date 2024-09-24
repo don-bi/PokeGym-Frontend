@@ -7,6 +7,11 @@ const axiosInstance = axios.create({
     baseURL: import.meta.env.VITE_BASE_URL,
 })
 
+axiosInstance.interceptors.request.use((config) => {
+    config.headers.set('Authorization', 'Bearer ' + sessionStorage.getItem("token"));
+    return config;
+})
+
 export const setWorkoutSplitsStore = async (dispatch: Dispatch) => {
     try {
         const { data } = await axiosInstance.get("/WorkoutSplit");
