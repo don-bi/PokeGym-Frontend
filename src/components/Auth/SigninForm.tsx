@@ -12,7 +12,7 @@ export default function SignInForm() {
             
             <div className="middle-container flex flex-col w-3/12 items-center backdrop-blur-sm h-4/6 shadow-slate-400 rounded-lg px-10 py-6">
                 <div className="flex items-center">
-                    <img src="/pokeball-icon.png" alt="" className="w-20"/>
+                    <img src="/pokeball-icon.png" alt="" className="w-20 hover:animate-spin"/>
                     <h1 className="text-4xl font-bold text-slate-200 logo-text">PokeGym</h1>
                 </div>
 

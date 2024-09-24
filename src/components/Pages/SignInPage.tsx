@@ -1,5 +1,5 @@
 import SignInForm from "../Auth/SigninForm";
-import AuthRoute from "../AuthRoute";
+import AuthRoute from "../RouteHandlers/AuthRoute";
 
 export default function SignInPage() {
     return (

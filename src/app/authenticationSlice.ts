@@ -21,10 +21,15 @@ export const authenticationSlice = createSlice({
             sessionStorage.setItem('token', action.payload.token);
             sessionStorage.setItem('username', action.payload.username);
             sessionStorage.setItem('email', action.payload.email);
+        },
+        logout: (state) => {
+            state.isLoggedIn = false;
+            state.token = '';
+            sessionStorage.clear();
         }
     }
 })
 
 export default authenticationSlice.reducer;
 
-export const { setIsAuthenticated } = authenticationSlice.actions;
+export const { setIsAuthenticated, logout } = authenticationSlice.actions;

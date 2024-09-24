@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { setIsAuthenticated } from "../app/authenticationSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { setIsAuthenticated } from "../../app/authenticationSlice";
 
 export default function CheckAuth({children}: {children: React.ReactElement}) {
     const dispatch = useAppDispatch();
