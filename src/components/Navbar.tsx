@@ -16,10 +16,8 @@ export default function Navbar() {
             <ul className="flex gap-4">
                 <li><Link to="/dashboard" className="text-slate-200 font-bold text-xl 
                 hover:text-slate-100 duration-200">Profile</Link></li>
-                <li><Link to="/dashboard" className="text-slate-200 font-bold text-xl 
+                <li><Link to="/pokemon" className="text-slate-200 font-bold text-xl 
                 hover:text-slate-100 duration-200">Pokemon</Link></li>
-                <li><Link to="/dashboard" className="text-slate-200 font-bold text-xl 
-                hover:text-slate-100 duration-200">Settings</Link></li>
                 <button className="text-slate-200 font-bold text-xl 
                 hover:text-slate-100 duration-200" 
                 onClick={(e) => {

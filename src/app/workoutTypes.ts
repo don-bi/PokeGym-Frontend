@@ -26,3 +26,25 @@ export type WorkoutSet = {
     weight: number,
     workoutExerciseId: number,
 }
+
+export type Pokemon = {
+    id: number,
+    name: string,
+    pokedexNumber: number,
+    imageUrl: string,
+    type: string,
+    isCaptured: boolean,
+    spawnDate: string,
+    userId: number,
+    quests: Quest[],
+}
+
+export type Quest = {
+    id: number,
+    description: string,
+    isCompleted: boolean,
+    questType: string,
+    requiredAmount: number,
+    currentProgress: number,
+    pokemonId: number,
+}

@@ -4,6 +4,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout.tsx'
 import SignInPage from './components/Pages/SignInPage.tsx'
 import Dashboard from './components/Pages/Dashboard.tsx'
+import PokemonPage from './components/pokemon/PokemonPage.tsx'
+import { Provider } from 'react-redux'
+import { store } from './app/store'
 
 const router = createBrowserRouter([
   {
@@ -17,13 +20,17 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />
+      },
+      {
+        path: "/pokemon",
+        element: <PokemonPage />
       }
     ]
   }
 ])
 
 createRoot(document.getElementById('root')!).render(
-      
-        <RouterProvider router={router}/>
-
+  <Provider store={store}>
+    <RouterProvider router={router}/>
+  </Provider>
 )
